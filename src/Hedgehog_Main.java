@@ -15,6 +15,10 @@ public class Hedgehog_Main {
      Connection connection = DriverManager.getConnection(url, user, password);
      statement = connection.createStatement();
 
+     // 설문 전 데이터 INSERT 구현
+     Hedgehog_Insert hi = new Hedgehog_Insert();
+     hi.InsertFunction(statement);
+
      while(true){        
          // P. 설문시작  S.통계  Q.종료  R. 설문결과
          System.out.println("-----------------------------------------------------------------");
@@ -26,20 +30,24 @@ public class Hedgehog_Main {
          //@ P 를 선택했을 때
          if(choice.equals("P")) {
         
-             // 이름과 생년월일 입력 받기
-             System.out.println("1. 이름을 입력해주세요 : ");    
-             System.out.print("이름) ");
-             String surveyor_Name = scanner.nextLine();
-             System.out.println("2. 생년월일을 입력해주세요 : ");
-             System.out.print("생년월일) ");
-             String surveyor_Birth = scanner.nextLine();
+            //  // 이름과 생년월일 입력 받기
+            //  System.out.println("1. 이름을 입력해주세요 : ");    
+            //  System.out.print("이름) ");
+            //  String surveyor_Name = scanner.nextLine();
+            //  System.out.println("2. 생년월일을 입력해주세요 : ");
+            //  System.out.print("생년월일) ");
+            //  String surveyor_Birth = scanner.nextLine();
    
-             String query = "INSERT INTO surveyor(NAME, BIRTH_DATE)  VALUE ('"+surveyor_Name+"', '"+surveyor_Birth+"')";  
-             statement.execute(query);
-              // 여기까지 p를 선택하고 이름, 생일 입력받고 그 값을 테이블에 추가
+            //  String query = "INSERT INTO surveyor(NAME, BIRTH_DATE)  VALUE ('"+surveyor_Name+"', '"+surveyor_Birth+"')";  
+            //  statement.execute(query);
+            //   // 여기까지 p를 선택하고 이름, 생일 입력받고 그 값을 테이블에 추가
 
               
-             // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
+            //  // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
+            // Hedgehog_Survey hs = new Hedgehog_Survey();         /// 소희님 메소드받아옴.  @@@@@@@@@ SELECT실험 위해 임시 주석처리
+            // hs.Survey();
+            SURVEY_PRAC aaa = new SURVEY_PRAC();
+            aaa.Survey(statement);
 
                 
      System.out.println();        
