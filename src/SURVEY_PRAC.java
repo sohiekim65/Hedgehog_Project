@@ -25,52 +25,44 @@ public class SURVEY_PRAC {
         // 설문 입력 받기
         // 3번
         while(true){
+
             System.out.println("3. 반려동물에 관심이 있나요?");
          System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
             
-            Integer number3 = scanner.nextInt();
+         //---------------------------------------------------------------------------------------------------------------------
+            String number3 = scanner.nextLine();    //  --> 인트를 스트링으로 변경
+            if("1,2,3,4".equals(number3)){
+            String query = "SELECT MAX(UNIQUE_ID) FROM surveyor";    // surveyor을 불러오고   UNIQUE_ID_SURVEYOR  설문자 대표값은 항상 최대값이 최신 
+            String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S1'";    // 질문 리스트의대표값 불러오기
+    
             
-            if(number3 == 1){   
-                String query = "SELECT MAX(UNIQUE_ID) FROM surveyor";    // surveyor을 불러오고
-                ResultSet resultSet = statement.executeQuery(query);    //resultSet에 값을 담고         
+            ResultSet resultSet = statement.executeQuery(query);    //resultSet에 값을 담고      
+            ResultSet resultSet2 = statement.executeQuery(query2) ;   // s1 지정한 값을 담고
             
-                resultSet.next();
-                       
-                String UNIQUE_ID_result = resultSet.getString("MAX(UNIQUE_ID)");   // UNUQIE_ID_result에 getString로 UNIQUE_ID값을 담는다   
-   
-               //  강사님 코드와 다른점 WHILE(RESULTSET.NEXT()) 가 없음.   --> 몇번째 값인지 특정하지 못하는듯하다.  --->  37열  while문의 RESULT.LAST를 사용해 끝까지 넘긴 후  // 
-                // MAX(UNIQUE_ID) 를 사용해 값을하나만 남긴 후 출력해보기 // 안되면 resultSet.next() 사용해서 어차피 하나밖에 없으니 출력해보기
-                query = "INSERT INTO result (UNIQUE_ID_SURVEY_LIST, UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+UNIQUE_ID_result+"','"+surveyor_Name+"', '"+surveyor_Birth+"' )";  //여기에 UNIQUE_ID를 넣으려면 SURVEYOR에서 UNIQUE_ID값을 받아 넣기
-                statement.execute(query);
+            
+            resultSet.next();    // UNIQUE_ID_SURVEYOR 의 최대값이 그냥은 지정이 안되서 next를 사용해 지정.
+            
+            String UNIQUE_ID_surveyor = resultSet.getString("MAX(UNIQUE_ID)");   // 
+            String UNIQUE_ID_survey_list = resultSet2.getString("UNIQUE_ID");   // 
+            String UNIQUE_ID_question_answer = "C" + number3;
+    
+    
+            query = "INSERT INTO result (UNIQUE_ID_SURVEY_LIST, UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+UNIQUE_ID_survey_list +"','"+UNIQUE_ID_surveyor+"', '"+ UNIQUE_ID_question_answer+"' )";  //여기에 UNIQUE_ID를 넣으려면 SURVEYOR에서 UNIQUE_ID값을 받아 넣기
+                                                                                                                             //질문번호 S1( )          고객번호1234 ( )            질문의답 C1 ( )  
+            statement.execute(query); 
 
-                // ------------------------
-                // ID는 나중에 넣고 입력받은 NAME과 BIRTH를 먼저 넣은 후 나중에 UPDATE로 추가해보자
-
-                // String query = "SELECT * FROM surveyor";    // 
-                // ResultSet resultSet = statement.executeQuery(query);    
-                // query = "INSERT INTO result (UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+surveyor_Name+"', '"+surveyor_Birth+"' )";  //여기에 UNIQUE_ID를 넣으려면 SURVEYOR에서 UNIQUE_ID값을 받아 넣기
-                // statement.execute(query);
-
-
-                // resultSet.last(); 
-                // String UNIQUE_ID_result = resultSet.getString("UNIQUE_ID");
-
-                break;
-            }
-            if(number3 == 2){                
-                break;
-            }
-            if(number3 == 3){                
-                break;
-            }
-            if(number3 == 4){               
-                break;
+            break;
             } else {
                 System.out.println("다시 입력해주세요");
                 System.out.println("\n");
                 continue;
             }
-        }   
+        }
+//----------------------------------------------------------------------------------------------------------------------------------
+    
+                      
+            
+            
         System.out.println("\n");
         
         // 4번                
