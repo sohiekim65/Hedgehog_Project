@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Hedgehog_Survey {
 
-    public static void Survey(){
+    public void Survey(){
         Scanner scanner = new Scanner(System.in);
 
         // 설문 입력 받기

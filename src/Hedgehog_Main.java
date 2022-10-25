@@ -38,7 +38,6 @@ public class Hedgehog_Main {
              statement.execute(query);
               // 여기까지 p를 선택하고 이름, 생일 입력받고 그 값을 테이블에 추가
 
-              
              // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
 
                 
