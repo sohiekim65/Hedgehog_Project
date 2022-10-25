@@ -177,22 +177,7 @@ public class SURVEY_PRAC {
         exception.printStackTrace();
 
     }
-
-        
-
     }
 }
 
-        
-    
-
-            
-        
-
-        
-    
-
-
-
-    
 
