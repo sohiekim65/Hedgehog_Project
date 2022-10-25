@@ -49,6 +49,9 @@ public class Hedgehog_Main {
             SURVEY_PRAC aaa = new SURVEY_PRAC();
             aaa.Survey(statement);
 
+             // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
+
+
                 
      System.out.println();        
      System.out.print("--------------------설문 종료--------------------");
