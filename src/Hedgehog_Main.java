@@ -32,10 +32,11 @@ public class Hedgehog_Main {
         
              
              // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
-            Hedgehog_Survey hs = new Hedgehog_Survey();         /// 소희님 메소드받아옴.  @@@@@@@@@ SELECT실험 위해 임시 주석처리
-            hs.Survey();
-            SURVEY_PRAC aaa = new SURVEY_PRAC();
-            aaa.Survey(statement);
+            // Hedgehog_Survey hs = new Hedgehog_Survey();         /// 은솔님 메소드받아옴.  @@@@@@@@@ SELECT실험 위해 임시 주석처리
+            // hs.Survey();
+            SURVEY_PRAC sr = new SURVEY_PRAC();
+            sr.selectFunction(statement);
+
 
              // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
 
@@ -85,13 +86,13 @@ public class Hedgehog_Main {
          else if(choice.equals("Q")) {
          System.out.println("이용해주셔서 감사합니다!");
          return;  // 이건 void타입일때만      122222222222222222222222
-
+         
          // @ R을 선택했을 때
-         } else if(choice.equals("R")) {
+        } else if(choice.equals("R")) {
             Hedgehog_ResultCheck hr = new Hedgehog_ResultCheck();
             hr.ResultFunction2(connection, statement, null);
             break;
-
+            
          } else System.out.println("다시 입력해 주세요");
          }   // 전체 WHILE 닫힘
 

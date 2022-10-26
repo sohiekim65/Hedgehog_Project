@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class SURVEY_PRAC {
 
-    public void Survey(Statement statement){
+    public void selectFunction(Statement statement){
         Scanner scanner = new Scanner(System.in);
 
         
