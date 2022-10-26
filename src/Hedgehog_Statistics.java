@@ -12,7 +12,7 @@ public class Hedgehog_Statistics {
         while(true){
             System.out.println("1. 설문자별 답변 결과 | 2. 질문별 총 답변 수");
             // 1, 2 입력 받기
-            System.out.print("선택)");
+            System.out.print("선택) ");
             String choice = scanner.nextLine();
             // 1번 출력
             if(choice.equals("1")){
