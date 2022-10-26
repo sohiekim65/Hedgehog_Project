@@ -31,7 +31,8 @@ public class Hedgehog_Main {
 
          //@ P 를 선택했을 때
          if(choice.equals("P")) {
-        
+            SURVEY_PRAC sp = new SURVEY_PRAC();
+            sp.selectFunction(statement);
              
              // SELECT 구현하기
 
