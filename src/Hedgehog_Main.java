@@ -15,10 +15,6 @@ public class Hedgehog_Main {
      Connection connection = DriverManager.getConnection(url, user, password);
      statement = connection.createStatement();
 
-     // 설문 전 데이터 INSERT 구현
-     Hedgehog_Insert hi = new Hedgehog_Insert();
-     hi.InsertFunction(statement);
-
      while(true){        
          // P. 설문시작  S.통계  Q.종료  R. 설문결과
          System.out.println("-----------------------------------------------------------------");
