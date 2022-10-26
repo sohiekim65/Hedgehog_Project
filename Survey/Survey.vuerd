@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": 0,
-    "zoomLevel": 0.8,
+    "scrollTop": -131.20000000000007,
+    "scrollLeft": -83.20000000000007,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -97,7 +97,7 @@
           "active": false,
           "left": 90.0379,
           "top": 254.6346,
-          "zIndex": 60,
+          "zIndex": 5,
           "widthName": 126.17919921875,
           "widthComment": 60
         },
@@ -111,7 +111,7 @@
           {
             "name": "UNIQUE_ID",
             "comment": "대표값",
-            "dataType": "VARCHAR(200)",
+            "dataType": "INTEGER",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -126,7 +126,7 @@
               "pfk": false,
               "widthName": 72.33203125,
               "widthComment": 60,
-              "widthDataType": 90.283203125,
+              "widthDataType": 60,
               "widthDefault": 60
             },
             "id": "18ef2d13-55f0-4120-8662-51f563de722d"
@@ -182,7 +182,7 @@
           "active": false,
           "left": 87.8225,
           "top": 69.1554,
-          "zIndex": 36,
+          "zIndex": 23,
           "widthName": 67.22216796875,
           "widthComment": 60
         },
@@ -244,7 +244,7 @@
           "active": false,
           "left": 752.2196,
           "top": 464.2424,
-          "zIndex": 39,
+          "zIndex": 2,
           "widthName": 80.46337890625,
           "widthComment": 60
         },
@@ -281,7 +281,7 @@
           {
             "name": "UNIQUE_ID_SURVEYOR",
             "comment": "설문자대표값",
-            "dataType": "VARCHAR(200)",
+            "dataType": "INTEGER",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -296,7 +296,7 @@
               "pfk": false,
               "widthName": 143.32421875,
               "widthComment": 80,
-              "widthDataType": 90.283203125,
+              "widthDataType": 60,
               "widthDefault": 60
             },
             "id": "d496634f-0931-45ea-b351-504685c25b94"
@@ -329,7 +329,7 @@
           "active": false,
           "left": 621.1025,
           "top": 81.5904,
-          "zIndex": 41,
+          "zIndex": 14,
           "widthName": 60,
           "widthComment": 60
         },
@@ -391,7 +391,7 @@
           "active": false,
           "left": 101.4568,
           "top": 460.6727,
-          "zIndex": 59,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },
