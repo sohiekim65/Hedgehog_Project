@@ -79,6 +79,7 @@ public class Hedgehog_Main {
          else if(choice.equals("S")) {
             Hedgehog_Statistics hs = new Hedgehog_Statistics();
             hs.StatisticsFunction(connection, statement, null);
+            continue;
          }
  
 
@@ -92,6 +93,7 @@ public class Hedgehog_Main {
         } else if(choice.equals("R")) {
             Hedgehog_ResultCheck hr = new Hedgehog_ResultCheck();
             hr.ResultFunction2(connection, statement, null);
+            continue;
             
          } else System.out.println("다시 입력해 주세요");
          }   // 전체 WHILE 닫힘
