@@ -73,7 +73,6 @@ public class Hedgehog_Main {
          else if(choice.equals("S")) {
             Hedgehog_Statistics hs = new Hedgehog_Statistics();
             hs.StatisticsFunction(connection, statement, null);
-            break;
          }
  
 
