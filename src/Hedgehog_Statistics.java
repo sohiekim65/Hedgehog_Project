@@ -95,24 +95,3 @@ public class Hedgehog_Statistics {
         }
     }
 }
-
-// // 나의 설문 결과 조회
-// class Result {
-//     public void ResultFunction(Statement statement){
-//         String query = "SELECT NAME, QUESTION_ANSWER.QUESTION_ANSWER FROM (SURVEYOR INNER JOIN RESULT ON SURVEYOR.UNIQUE_ID = RESULT.UNIQUE_ID_SURVEYOR) "
-//                          +"LEFT JOIN question_answer ON RESULT.UNIQUE_ID_QUESTION_ANSWER = QUESTION_ANSWER.UNIQUE_ID"
-//                         +"WHERE SURVEYOR.UNIQUE_ID = (SELECT MAX(SURVEYOR.UNIQUE_ID) FROM SURVEYOR"
-//                         + "GROUP BY QUESTION_ANSWER.QUESTION_ANSWERORDER BY SURVEYOR.UNIQUE_ID DESC);");
-//         try {
-//             ResultSet resultSet = statement.executeQuery(query);
-//             System.out.println("               질문(3)             질문(4)             질문(5)             질문(6)             질문(7)");
-//             String name = resultSet.getString("NAME");
-//             String question_answer = resultSet.getString("QUESTION_ANSWER");
-//             System.out.print(name + question_answer);
-//             System.out.println();
-//         } catch (Exception e) {
-//             e.printStackTrace();
-//         }
-//     }
-    
-// }
