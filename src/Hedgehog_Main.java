@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.Scanner;
 public class Hedgehog_Main { 
     
-    public static void main(String[] args) { //메인
+    public static void main(String[] args) { 
 
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -33,46 +33,36 @@ public class Hedgehog_Main {
          if(choice.equals("P")) {
         
              
-             // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
-            // Hedgehog_Survey hs = new Hedgehog_Survey();         /// 은솔님 메소드받아옴.  @@@@@@@@@ SELECT실험 위해 임시 주석처리
-            // hs.Survey();
-            // SURVEY_PRAC sr = new SURVEY_PRAC();
-            // sr.selectFunction(statement);
+             // SELECT 구현하기
 
-
-             // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
 
 
                 
-     System.out.println();        
-     System.out.println("--------------------설문 종료--------------------");
+           System.out.println();        
+           System.out.println("--------------------설문 종료--------------------");
  
-     // 설문을 제출할지 다시할지 선택
-     System.out.println("--------------------------------------------------");
-     System.out.println("            Y. 설문 제출  |  N. 재시작             ");
-     System.out.println("--------------------------------------------------");
+           // 설문을 제출할지 다시할지 선택
+           System.out.println("--------------------------------------------------");
+           System.out.println("            Y. 설문 제출  |  N. 재시작             ");
+           System.out.println("--------------------------------------------------");
 
-     // Y | N 선택 의 반복문.
-     while(true) { // 잘못된 입력시 다시 해달라는 while
-     String choice2 = scanner.nextLine(); 
-     if(choice2.equals("Y")) break;   // Y를 선택하면 반복문을 나가 다시 처음으로 감.
-     else if(choice2.equals("N")) {  // N을 선택하면 정보 지우고 다시 처음으로 감
-         // DELETE 구현하기
-         // surveyor_ID = "P"+ surveyor_num;  P1, 2 잘 증가하지만 여기서 다시 선언해도 의미없네  넘어가서는 P0  지워도 되는 라인XXXXXXXXXXXXXXXXXXXXXXXXXX  
-                                     // 여기까지 P1인상태
-         Hedgehog_Delete hd = new Hedgehog_Delete();
-         hd.DeleteFunction(statement);
-
-
-         break;
-      }else {
-      System.out.println("다시 입력해 주세요");
-      // Y / N 이 아니라면 다시 위로 올라가서 WHILE문 안에서 못나감.
-     }
-     }
+      // Y | N 선택 의 반복문.
+           while(true) {
+              String choice2 = scanner.nextLine(); 
+              if(choice2.equals("Y")) break;  
+              else if(choice2.equals("N")) {      
+        
+        // DELETE 구현하기
+    
+              Hedgehog_Delete hd = new Hedgehog_Delete();
+              hd.DeleteFunction(statement);
 
 
-
+              break;
+              }else {
+              System.out.println("다시 입력해 주세요"); 
+              }
+           }
 
          }
          // S를 선택했을 때
@@ -82,7 +72,6 @@ public class Hedgehog_Main {
             continue;
          }
  
-
 
           //  @ Q를 선택했을 때
          else if(choice.equals("Q")) {
@@ -96,7 +85,7 @@ public class Hedgehog_Main {
             continue;
             
          } else System.out.println("다시 입력해 주세요");
-         }   // 전체 WHILE 닫힘
+         }   
 
          
         } catch (SQLException exception) {
