@@ -30,7 +30,7 @@ public class SURVEY_PRAC {
         while(true){
 
             System.out.println("3. 반려동물에 관심이 있나요?");
-         System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
+            System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
             
          //---------------------------------------------------------------------------------------------------------------------
             String number3 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
@@ -78,15 +78,15 @@ public class SURVEY_PRAC {
             System.out.println("4. 반려동물을 키울 생각이 있나요?");
             System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
                         
-            String number3 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
-            if("1,2,3,4".contains(number3+"")){
+            String number4 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
+            if("1,2,3,4".contains(number4+"")){
 
     
-                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S1'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
-                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s1 지정한 값을 담고
+                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S2'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
+                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s2 지정한 값을 담고
                 resultSet2.next();   // 이게 ㅇ벗다면 getString에서 오류가 난다.
                 String UNIQUE_ID_survey_list = resultSet2.getString("UNIQUE_ID");   // 
-                String UNIQUE_ID_question_answer = "C" + number3;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
+                String UNIQUE_ID_question_answer = "C" + number4;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
                 
                 query2 = "INSERT INTO result (UNIQUE_ID_SURVEY_LIST, UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+UNIQUE_ID_survey_list +"','0', '"+ UNIQUE_ID_question_answer+"' )";   //고객번호를 0으로 먼저 넣어두고 나중에 UPDATE하기
                 
@@ -117,15 +117,15 @@ public class SURVEY_PRAC {
             System.out.println("5. 유기동물을 입양할 생각이 있나요?");
             System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
             
-            String number3 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
-            if("1,2,3,4".contains(number3+"")){
+            String number5 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
+            if("1,2,3,4".contains(number5+"")){
 
     
-                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S1'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
-                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s1 지정한 값을 담고
+                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S3'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
+                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s3 지정한 값을 담고
                 resultSet2.next();   // 이게 ㅇ벗다면 getString에서 오류가 난다.
                 String UNIQUE_ID_survey_list = resultSet2.getString("UNIQUE_ID");   // 
-                String UNIQUE_ID_question_answer = "C" + number3;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
+                String UNIQUE_ID_question_answer = "C" + number5;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
                 
                 query2 = "INSERT INTO result (UNIQUE_ID_SURVEY_LIST, UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+UNIQUE_ID_survey_list +"','0', '"+ UNIQUE_ID_question_answer+"' )";   //고객번호를 0으로 먼저 넣어두고 나중에 UPDATE하기
                 
@@ -157,15 +157,15 @@ public class SURVEY_PRAC {
             System.out.println("6. 반려동물을 키울 생각이 있나요?");
             System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
             
-            String number3 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
-            if("1,2,3,4".contains(number3+"")){
+            String number6 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
+            if("1,2,3,4".contains(number6+"")){
 
     
-                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S1'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
-                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s1 지정한 값을 담고
+                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S4'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
+                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s4 지정한 값을 담고
                 resultSet2.next();   // 이게 ㅇ벗다면 getString에서 오류가 난다.
                 String UNIQUE_ID_survey_list = resultSet2.getString("UNIQUE_ID");   // 
-                String UNIQUE_ID_question_answer = "C" + number3;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
+                String UNIQUE_ID_question_answer = "C" + number6;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
                 
                 query2 = "INSERT INTO result (UNIQUE_ID_SURVEY_LIST, UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+UNIQUE_ID_survey_list +"','0', '"+ UNIQUE_ID_question_answer+"' )";   //고객번호를 0으로 먼저 넣어두고 나중에 UPDATE하기
                 
@@ -196,15 +196,15 @@ public class SURVEY_PRAC {
             System.out.println("7. 반려동물이 삶의 만족도에 영향을 준다고 생각하시나요?");
             System.out.println("(1) 매우 그렇다"+ " (2) 그렇다" + " (3) 그렇지 않다" + " (4) 전혀 그렇지 않다");
             
-            String number3 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
-            if("1,2,3,4".contains(number3+"")){
+            String number7 = scanner.nextLine();    //  @@@@@@@@@@@@@@@@@@@   다음라인까지  NUM값 변경
+            if("1,2,3,4".contains(number7+"")){
 
     
-                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S1'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
-                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s1 지정한 값을 담고
+                String query2 = "SELECT UNIQUE_ID FROM survey_list WHERE UNIQUE_ID = 'S5'";    // 질문 리스트의대표값 불러오기      질문번호담기    @@@@@@@@@@@@@@@@@@@  S값변경
+                ResultSet resultSet2 = statement.executeQuery(query2) ;   // s5 지정한 값을 담고
                 resultSet2.next();   // 이게 없다면 getString에서 오류가 난다.
                 String UNIQUE_ID_survey_list = resultSet2.getString("UNIQUE_ID");   // 
-                String UNIQUE_ID_question_answer = "C" + number3;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
+                String UNIQUE_ID_question_answer = "C" + number7;           //@@@@@@@@@@@@@@@@@@@@     NUM값 변경
                 
                 query2 = "INSERT INTO result (UNIQUE_ID_SURVEY_LIST, UNIQUE_ID_SURVEYOR, UNIQUE_ID_QUESTION_ANSWER) VALUE ('"+UNIQUE_ID_survey_list +"','0', '"+ UNIQUE_ID_question_answer+"' )";   //고객번호를 0으로 먼저 넣어두고 나중에 UPDATE하기
                 
@@ -237,6 +237,7 @@ public class SURVEY_PRAC {
             
         }
         // scanner.close();
+        scanner.close();
     }
 }
 
