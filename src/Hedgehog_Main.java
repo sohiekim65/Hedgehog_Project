@@ -99,5 +99,4 @@ public class Hedgehog_Main {
      scanner.close();
 }
 
-
 }
