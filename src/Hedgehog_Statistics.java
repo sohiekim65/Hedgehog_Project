@@ -29,7 +29,6 @@ public class Hedgehog_Statistics {
                 continue;
             }
         }
-        scanner.close();
     }
 
     // 설문자별 답변 결과
@@ -67,16 +66,6 @@ public class Hedgehog_Statistics {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    statement.close();
-                    resultSetAnswer.close();
-                    resultSet.close();
-                    preparedStatement.close();
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
             }
     }
 
@@ -103,15 +92,6 @@ public class Hedgehog_Statistics {
                 System.out.println();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                statement.close();
-                resultSetCount.close();
-                preparedStatement.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        } 
     }
 }
