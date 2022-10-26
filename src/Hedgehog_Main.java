@@ -30,8 +30,8 @@ public class Hedgehog_Main {
              // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
             // Hedgehog_Survey hs = new Hedgehog_Survey();         /// 은솔님 메소드받아옴.  @@@@@@@@@ SELECT실험 위해 임시 주석처리
             // hs.Survey();
-            SURVEY_PRAC sr = new SURVEY_PRAC();
-            sr.selectFunction(statement);
+            // SURVEY_PRAC sr = new SURVEY_PRAC();
+            // sr.selectFunction(statement);
 
 
              // SELECT 문 구현해서 질문목록 불러오고 답변을 테이블에 저장
