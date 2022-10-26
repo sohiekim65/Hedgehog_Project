@@ -86,8 +86,9 @@ public class Hedgehog_Main {
          }
          // S를 선택했을 때
          else if(choice.equals("S")) {
-             System.out.println("통계구현중");
-             // 통계 구현
+            Hedgehog_Statistics hs = new Hedgehog_Statistics();
+            hs.StatisticsFunction(connection, statement, null);
+            break;
          }
  
 
@@ -99,7 +100,9 @@ public class Hedgehog_Main {
          // @ R을 선택했을 때
 
          } else if(choice.equals("R")) {
-             // 설문결과 구현
+            Hedgehog_ResultCheck hr = new Hedgehog_ResultCheck();
+            hr.ResultFunction2(connection, statement, null);
+            break;
 
          } else System.out.println("다시 입력해 주세요");
          }   // 전체 WHILE 닫힘
