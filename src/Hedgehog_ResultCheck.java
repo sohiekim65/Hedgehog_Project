@@ -58,15 +58,6 @@ public class Hedgehog_ResultCheck {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                statement.close();
-                resultSetCheck.close();
-                preparedStatement.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        } 
     }
 }
