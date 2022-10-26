@@ -1,9 +1,15 @@
 import java.sql.*;
 import java.util.Scanner;
 public class Hedgehog_Main { 
+    
     public static void main(String[] args) { //메인
+
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    ResultSet resultSetAnswer = null;
+    Statement statement = null;
         
-    Statement statement;
     Scanner scanner = new Scanner(System.in);
   
              //연결
@@ -12,7 +18,7 @@ public class Hedgehog_Main {
     String password = "*khacademy!";
 
     try{ 
-     Connection connection = DriverManager.getConnection(url, user, password);
+     connection = DriverManager.getConnection(url, user, password);
      statement = connection.createStatement();
 
      while(true){        
@@ -39,7 +45,7 @@ public class Hedgehog_Main {
 
                 
      System.out.println();        
-     System.out.print("--------------------설문 종료--------------------");
+     System.out.println("--------------------설문 종료--------------------");
  
      // 설문을 제출할지 다시할지 선택
      System.out.println("--------------------------------------------------");
@@ -86,17 +92,28 @@ public class Hedgehog_Main {
         } else if(choice.equals("R")) {
             Hedgehog_ResultCheck hr = new Hedgehog_ResultCheck();
             hr.ResultFunction2(connection, statement, null);
-            break;
             
          } else System.out.println("다시 입력해 주세요");
          }   // 전체 WHILE 닫힘
 
+         
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        } finally {
+            try {
+            scanner.close();
+                if(statement!=null)statement.close();
+                if(resultSetAnswer!=null)resultSetAnswer.close();
+                if(resultSet!=null)resultSet.close();
+                if(preparedStatement!=null)preparedStatement.close();
+                if(connection!=null)connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+        }
+        }
+}
 
-     } catch (SQLException exception) {
-      exception.printStackTrace();
-     }
-  
-     scanner.close();
-    }
- 
+
+
 } 
+
