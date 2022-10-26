@@ -5,6 +5,8 @@ public class Hedgehog_Statistics {
     Connection connection;
     PreparedStatement preparedStatement;
     ResultSet resultSet;
+    ResultSet resultSetAnswer;
+    ResultSet resultSetCount;
     Statement statement;
     
     public void StatisticsFunction(Connection connection, Statement statement, PreparedStatement preparedStatement){
@@ -39,7 +41,7 @@ public class Hedgehog_Statistics {
             try {
                 // 이름 쿼리 전송(statement 사용 무관)
                 preparedStatement = connection.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
+                resultSet = preparedStatement.executeQuery();
 
                 // ResultSet resultSet = statement.executeQuery(query);
                 // ?가 있는 SQL문 전송
@@ -55,7 +57,7 @@ public class Hedgehog_Statistics {
                     // SQL문을 받고 ?에 설문자UID 삽입
                     preparedStatement.setString(1, resultSet.getString("UNIQUE_ID"));
                     // 답변 쿼리 전송
-                    ResultSet resultSetAnswer = preparedStatement.executeQuery();
+                    resultSetAnswer = preparedStatement.executeQuery();
 
                     while(resultSetAnswer.next()){
                         System.out.print(resultSetAnswer.getString("UNIQUE_ID_QUESTION_ANSWER"));
@@ -65,6 +67,16 @@ public class Hedgehog_Statistics {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    statement.close();
+                    resultSetAnswer.close();
+                    resultSet.close();
+                    preparedStatement.close();
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
     }
 
@@ -74,24 +86,32 @@ public class Hedgehog_Statistics {
                         +", count(case when UNIQUE_ID_QUESTION_ANSWER = 'C3' THEN 1 END) AS 'C3'"
                         +", count(case when UNIQUE_ID_QUESTION_ANSWER = 'C4' THEN 1 END) AS 'C4'"
                         +", count('C1') FROM RESULT GROUP BY UNIQUE_ID_SURVEY_LIST;";
-        ResultSet resultSet;
         try {
-            resultSet = statement.executeQuery(query);
+            resultSetCount = statement.executeQuery(query);
             int question = 3;
             
             System.out.println("             답(1)     답(2)     답(3)     답(4)");
-            while(resultSet.next()){
+            while(resultSetCount.next()){
                 // String surveyList = resultSet.getString("UNIQUE_ID_SURVEY_LIST");
-                String C1 = resultSet.getString("C1");
-                String C2 = resultSet.getString("C2");
-                String C3 = resultSet.getString("C3");
-                String C4 = resultSet.getString("C4");
+                String C1 = resultSetCount.getString("C1");
+                String C2 = resultSetCount.getString("C2");
+                String C3 = resultSetCount.getString("C3");
+                String C4 = resultSetCount.getString("C4");
                 System.out.println("질문" + "(" + question + ")" + "        " + C1 + "         " + C2 + "         " + C3 + "         " + C4);
                 question++;
                 }
                 System.out.println();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+                resultSetCount.close();
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
