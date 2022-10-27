@@ -13,4 +13,4 @@
     - [Statistics_Function](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Statistics.java), [Survey_Result](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_ResultCheck.java)  
 
 ### [기능 작동 영상]
-[반려동물 설문조사 작동 영상](https://www.youtube.com/watch?v=ynxtCrWnlbA)
++ [반려동물 설문조사 작동 영상](https://www.youtube.com/watch?v=ynxtCrWnlbA)
