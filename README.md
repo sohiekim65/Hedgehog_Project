@@ -12,7 +12,7 @@
 + 이정훈 : 메인 구현
     - [Main](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Main.java), [Delect](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Delete.java)    
 + 김소희 : 통계 구현
-    - [Statistics](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Statistics.java), [Survey_Result](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_ResultCheck.java)    
+    - [Statistics](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Statistics.java), [Result](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_ResultCheck.java)    
 
 
 ### [기능 작동 영상]
