@@ -1,4 +1,5 @@
 🦔 반려동물 설문조사 🦔  
+반려 동물에 대한 관심과 인식에 대한 설문조사 프로젝트
 -------------
 ### [프로젝트 구성]
 + [ERD](https://github.com/sohiekim65/Hedgehog_Project/blob/master/refers/ERD/Hedgehog_ERD.png)  
