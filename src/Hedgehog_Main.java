@@ -77,7 +77,7 @@ public class Hedgehog_Main {
                 // @ Q를 선택했을 때
                 else if (choice.equals("Q")) {
                     System.out.println("이용해주셔서 감사합니다!");
-                    return; // 이건 void타입일때만 122222222222222222222222
+                    return; // 이건 void타입일때만
 
                 } 
                 // @ R을 선택했을 때
