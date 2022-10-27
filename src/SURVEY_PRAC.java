@@ -4,8 +4,9 @@ import java.sql.*;
 
 public class SURVEY_PRAC {
 
-    public void selectFunction(Statement statement) {
+    public boolean selectFunction(Statement statement) {
         Scanner scanner = new Scanner(System.in);
+        boolean result = true;
 
         try {
 
@@ -17,8 +18,21 @@ public class SURVEY_PRAC {
             System.out.print("생년월일) ");
             String surveyor_Birth = scanner.nextLine();
 
+            
+            String queryCheck = "SELECT * FROM surveyor";
+            ResultSet resultSetCheck = statement.executeQuery(queryCheck);
+            while(resultSetCheck.next()){
+                if((surveyor_Name.equals(resultSetCheck.getString("NAME"))) && (surveyor_Birth.equals(resultSetCheck.getNString("BIRTH_DATE")))){
+                    System.out.println("[ 이미 설문 완료하였습니다! ]");
+                    result = false;
+                    break;
+                } 
+            }
+            
+            if(result){
+
             String query0 = "INSERT INTO surveyor(NAME, BIRTH_DATE)  VALUE ('" + surveyor_Name + "', '" + surveyor_Birth
-                    + "')";
+            + "')";
             statement.execute(query0);
             // 여기까지 p를 선택하고 이름, 생일 입력받고 그 값을 테이블에 추가
 
@@ -303,12 +317,12 @@ public class SURVEY_PRAC {
                 }
             }
             System.out.println("\n");
-
+        }
         } catch (SQLException exception) {
             exception.printStackTrace();
-
         }
+        return result;
     }
-        // scanner.close();
+    // scanner.close();
 }       
 

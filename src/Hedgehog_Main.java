@@ -12,10 +12,11 @@ public class Hedgehog_Main {
         
     Scanner scanner = new Scanner(System.in);
   
-             //연결
+    // 연결
     String url = "jdbc:mysql://localhost:3306/hedgehog_sqls";
     String user = "root";
     String password = "*khacademy!";
+
 
     try{ 
      connection = DriverManager.getConnection(url, user, password);
@@ -32,25 +33,28 @@ public class Hedgehog_Main {
          //@ P 를 선택했을 때
          if(choice.equals("P")) {
             SURVEY_PRAC sp = new SURVEY_PRAC();
-            sp.selectFunction(statement);
-             
-             // SELECT 구현하기
+            boolean checkSurvey = sp.selectFunction(statement);
+            if(!checkSurvey){
+                continue;
+            }
+            // SELECT 구현하기
 
 
 
                 
            System.out.println();        
-           System.out.println("--------------------설문 종료--------------------");
+           System.out.println("--------------------------- 설문 종료 ---------------------------");
  
            // 설문을 제출할지 다시할지 선택
-           System.out.println("--------------------------------------------------");
-           System.out.println("            Y. 설문 제출  |  N. 재시작             ");
-           System.out.println("--------------------------------------------------");
+           System.out.println("-----------------------------------------------------------------");
+           System.out.println("                    Y. 설문 제출  |  N. 재시작                    ");
+           System.out.println("-----------------------------------------------------------------");
 
       // Y | N 선택 의 반복문.
            while(true) {
               String choice2 = scanner.nextLine(); 
-              if(choice2.equals("Y")) break;  
+              if(choice2.equals("Y")) 
+                break;  
               else if(choice2.equals("N")) {      
         
         // DELETE 구현하기
