@@ -3,7 +3,7 @@ import java.sql.*;
 
 
 
-public class Hedgehod_Select {
+public class Hedgehog_Select {
     public void SelectFunction(Statement statement) {
          // SELECT * FROM SUERVEYOR ; and excute
          String query = "SELECT * FROM SURVEYOR";
