@@ -7,8 +7,6 @@ public class Hedgehog_Delete {
         
     public void DeleteFunction(Statement statement){    //statement 값을 받아와서 쓰겠다.
 
-        // Hedgehog_test ht = new Hedgehog_test();
-      
     try {            
         String query = "SELECT * FROM surveyor";    // 질문목록 불러와서 switch문 쓸때 사용함
         statement.execute(query);    
