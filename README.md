@@ -8,7 +8,7 @@
 
 ### [소스코드] 
 + 이은솔 : 설문 진행 구현
-    - [Survey_List](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Survey.java), [Select_Function](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Survey.java)    
+    - [Survey](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Survey.java)    
 + 이정훈 : 메인 구현
     - [Main](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Main.java), [Delect_Function](https://github.com/sohiekim65/Hedgehog_Project/blob/master/src/Hedgehog_Delete.java)    
 + 김소희 : 통계 구현
